@@ -1,0 +1,48 @@
+.background {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 324px;
+    height: 64px;
+}
+
+.icon img  {
+    display: flex;
+    flex-direction: row;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.container-info {
+    display: flex;
+
+}
+.store-name {
+    font-size: 18px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.store-postalcode {
+    font-family: Helvetica, Arial, sans-serif;
+    opacity: 0.8;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0; 
+    margin: 0;
+    padding-left: 10px;
+    font-weight: 100;
+}
+
+.select-store h3 {
+    font-size: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding-right: 10px;
+}
