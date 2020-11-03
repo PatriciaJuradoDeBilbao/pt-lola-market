@@ -5,6 +5,9 @@
     align-items: center;
     width: 324px;
     height: 64px;
+    /* position: fixed;
+    overflow: hidden;
+    top: 0; */
 }
 
 .icon img  {

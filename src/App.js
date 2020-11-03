@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import fetchData from './services/Token.service'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import Store from './components/Stores'
-import fetchCategories from './services/Categories.service'
+import { Route } from 'react-router-dom'
+import Store from './components/Stores/Stores'
+
 
 
 class App extends React.Component {
@@ -23,10 +23,6 @@ class App extends React.Component {
         validToken: token.token,
       })
     })
-    //Token y ID a mano
-    // fetchCategories("b9097bc679f1a808c62b3c57389f0f26", 53)
-    // .then(response => console.log('Categories:', response))
-
   }
 
     render () {
@@ -36,8 +32,7 @@ class App extends React.Component {
       return (
       <>
         <nav>
-        {/* <Store /> */}
-          <Route path='/' exact render={props => <Store token={this.state.validToken} postalcode={this.state.postalcode} />}/>
+          <Route path='/tienda/:market' exact render={props => <Store token={this.state.validToken} postalcode={this.state.postalcode} />}/>
         </nav>
        
      </>   

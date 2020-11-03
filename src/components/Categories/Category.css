@@ -1,0 +1,43 @@
+h2 {
+    font-size: 18px;
+    color: #666666;
+    padding-left: 10px;
+}
+
+.category-info {
+    border-bottom: 1px solid #D5D5D5;
+    width: 324px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.category-info:hover {
+  background-color: #f5f5f5;
+}
+
+.category-info:focus {
+  background-color: #4FD053;
+}
+
+.categories {
+  background-color: #f5f5f5;
+  width: 324px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.all-section {
+    font-size: 18px;
+    color: #666666;
+    padding-left: 40px;
+}
+
+.hide-icon {
+  transform: rotate(180deg);
+  
+}

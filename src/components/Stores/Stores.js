@@ -1,8 +1,10 @@
 import React from 'react'
-import fetchStores from '../services/Stores.service'
+import fetchStores from '../../services/Stores.service'
 import './Stores.css'
-import Categories from './CategoriesList'
-import fetchCategories from '../services/Categories.service'
+import Categories from '../Categories/CategoriesList'
+import fetchCategories from '../../services/Categories.service'
+
+
 
 const postalcode = 28010 
 
@@ -12,9 +14,10 @@ class Store extends React.Component {
         this.state = {
             companyData: '',
             companyId: '',
-            categories: []
+            categories: [],
         }
     }
+
     componentDidMount() {
       const token = JSON.parse(localStorage.getItem('token'))
         console.log(token)
@@ -27,15 +30,10 @@ class Store extends React.Component {
             })
         this.getCompanyId(token)
         })
-
-
     }
 
     getCompanyId = token => {
         const companyId = this.state.companyData.equivalent_company_id 
-        // this.setState({
-        //     companyId: companyId
-        // })
         fetchCategories(token, companyId)
         .then(response =>  {
             console.log(response.categories)
@@ -47,7 +45,7 @@ class Store extends React.Component {
 
     render() {
         if (this.state.companyData === ''){
-            return <div><h1>Loading</h1></div>
+            return <div><h1>Cargando..</h1></div>
 
         } else return (
             <>
@@ -67,7 +65,8 @@ class Store extends React.Component {
                 </div>
             <div>
             {
-                (this.state.categories.length > 0) ? <Categories categories={this.state.categories}/> : ''
+                    (this.state.categories.length > 0) ? <Categories categories={this.state.categories}/> : ''
+
             }
             </div>
             </>
