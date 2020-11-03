@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 import Store from './components/Stores/Stores'
 
 
-
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -42,5 +41,32 @@ class App extends React.Component {
 
 export default App;
 
-// 
+// import React, {useState, useEffect} from 'react'
+  
+// const App = props => {
+
+//   const [data, setData] = React.useState([{validToken: ''}])
+
+//   React.useEffect(() => {
+//     fetchData()
+//     .then(token => {
+//       localStorage.setItem('token', JSON.stringify(token.token))
+//       console.log('hooks',token)
+//       .then(data => setData(data.validToken))
+//     })
+//   }, [])
+
+//     return (
+//       <>
+//         <nav>
+//            <Route path='/tienda/:market' exact render={props => <Store token={data.validToken} postalcode={data.postalcode} />}/>
+//         </nav>
+       
+//       </>
+//     )
+
+// }
+
+// export default App
+ 
 

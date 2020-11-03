@@ -23,6 +23,7 @@
 
 }
 .store-name {
+    font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -47,4 +48,13 @@
     color: #FFFFFF;
     text-transform: uppercase;
     padding-right: 10px;
+}
+
+/* POPULARES */
+.category-name {
+    font-size: 18px;
+    color: #666666;
+    padding-left: 10px;
+    font-weight: 400;
+
 }

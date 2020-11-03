@@ -3,10 +3,12 @@ import fetchStores from '../../services/Stores.service'
 import './Stores.css'
 import Categories from '../Categories/CategoriesList'
 import fetchCategories from '../../services/Categories.service'
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faStar } from '@fortawesome/free-regular-svg-icons'
 
 
 const postalcode = 28010 
+// const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
 
 class Store extends React.Component {
     constructor(props){
@@ -64,6 +66,15 @@ class Store extends React.Component {
                     </div>
                 </div>
             <div>
+            {/* POPULARES */}
+            {/* <div className="category-info">
+                <div className="star-icon">
+                    {star}
+                </div>
+                <div>
+                    <h2 className="category-name">Populares</h2>
+                </div>
+            </div> */}
             {
                     (this.state.categories.length > 0) ? <Categories categories={this.state.categories}/> : ''
 

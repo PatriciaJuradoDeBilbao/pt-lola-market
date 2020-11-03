@@ -8,7 +8,7 @@ import { ReactComponent as Hide } from '../../assets/ic_hide.svg'
 
 const Category = props => {
 
-    const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg" />
+    const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
 
     const [show, setShow] = useState(false)
 
