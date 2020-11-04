@@ -6,6 +6,7 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { ReactComponent as Select } from '../../assets/ic_checked.svg'
 import { Link } from 'react-router-dom'
 
+
 const Categories = props => {
 
 const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
@@ -14,6 +15,7 @@ const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
 
         return (
             <>
+                <div className="list-background">
                 <Link to={`/tienda/${props.store}/populares`} className="btn">
                     <div className="popular-container">
                         <div className="popular-info">
@@ -29,7 +31,6 @@ const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
                         </div>
                     </div>
                 </Link>
-                <div className="list-background">
                     <h2 className="category-name">
                         {props.categories.map(category => 
                             <Category 

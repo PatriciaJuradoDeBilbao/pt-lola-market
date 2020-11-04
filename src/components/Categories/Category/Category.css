@@ -3,7 +3,6 @@
   border-bottom: 0.5px solid #D5D5D5;
   width: 324px;
   height: 56px;
-  
 }
 
 .button {
@@ -53,7 +52,6 @@
 .hide-icon {
   transform: rotate(180deg);
   transition: transform 0.2s ease;
-  
 }
 
 .categories {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Category.css'
-import SubCategoriesList from '../SubCategories/SubCategoriesList'
+import SubCategory from '../SubCategories/SubCategory'
 import { ReactComponent as Hide } from '../../../assets/ic_hide.svg'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -41,7 +41,7 @@ const Category = props => {
                     </div>    
                     <div className="subcategories-container">
                         {props.categories.map(subcategories => 
-                            <SubCategoriesList 
+                            <SubCategory 
                                 key={subcategories.id} 
                                 category={props.name}
                                 name={subcategories.name}

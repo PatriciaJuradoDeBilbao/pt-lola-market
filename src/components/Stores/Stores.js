@@ -3,7 +3,6 @@ import fetchStores from '../../services/Stores.service'
 import './Stores.css'
 import Categories from '../Categories/CategoriesList'
 import fetchCategories from '../../services/Categories.service'
-import { Route } from 'react-router-dom'
 
 
 const postalcode = 28010 

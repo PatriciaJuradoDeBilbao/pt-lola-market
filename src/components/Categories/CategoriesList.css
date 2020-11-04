@@ -4,9 +4,9 @@
 
 .list-background {
     background-color: #FFFFFF;
-    /* top: 64px;
+    top: 64px;
     overflow: auto;
-    position: relative; */
+    position: relative;
 }
 
 .popular-container {
@@ -17,7 +17,7 @@
     border-bottom: 0.5px solid #D5D5D5;
     justify-content: space-between;
     align-items: center;
-
+    height: 56px;
 }
 
 .popular-container:hover {
@@ -31,9 +31,9 @@
   }
 
   .btn {
-
     text-decoration: none;
   }
+  
   .popular-info {
     display: flex;
     align-items: center;
