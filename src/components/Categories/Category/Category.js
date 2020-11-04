@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import SubCategoriesList from './SubCategories/SubCategoriesList'
 import './Category.css'
+import SubCategoriesList from '../SubCategories/SubCategoriesList'
+import { ReactComponent as Hide } from '../../../assets/ic_hide.svg'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
-import { ReactComponent as Hide } from '../../assets/ic_hide.svg'
 
 
 const Category = props => {
 
-    const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
+    const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="sm"/>
 
     const [show, setShow] = useState(false)
 
@@ -16,7 +17,7 @@ const Category = props => {
         <>
             <div className="all">
                 <div className="category-container">
-                    <button onClick={() => setShow(!show)}>
+                    <Link to={`/tienda/${props.store}/${props.name}`} className="button" onClick={() => setShow(!show)}>
                         <div className="category-info">
                                 <div className="star-icon">
                                     {star}
@@ -28,22 +29,29 @@ const Category = props => {
                         <div className="hide-icon-container">
                             {show ? (<Hide/>) : (<Hide className="hide-icon"/>)}
                         </div>
-                    </button>
+                    </Link>
                 </div>
                 {show 
                 ? 
-                (<div> 
+                ( <div>
                     <div className="categories">
-                        <h3 className="all-section">Ver toda la sección</h3>
+                        <Link to={`/tienda/${props.store}/${props.name}`} className="all-section-link">
+                            <h3 className="all-section">Ver toda la sección</h3>
+                        </Link>
                     </div>    
                     <div className="subcategories-container">
-                        {props.categories.map(subcategories => <SubCategoriesList key={subcategories.id} name={subcategories.name} />)}
+                        {props.categories.map(subcategories => 
+                            <SubCategoriesList 
+                                key={subcategories.id} 
+                                category={props.name}
+                                name={subcategories.name}
+                                store={props.store}
+                            />
+                        )}
                     </div> 
-                </div>) 
+                </div> ) 
                 : 
-                ('')
-                }
-  
+                ('') }
             </div>
         </>
     )

@@ -31,10 +31,9 @@ class App extends React.Component {
       return (
       <>
         <nav>
-          <Route path='/tienda/:market' exact render={props => <Store token={this.state.validToken} postalcode={this.state.postalcode} />}/>
+          <Route path="/" render={props => <Store token={this.state.validToken} postalcode={this.state.postalcode} />}/>
         </nav>
-       
-     </>   
+      </>   
     );
   }
 }

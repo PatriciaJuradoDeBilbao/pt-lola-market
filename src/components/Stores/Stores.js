@@ -3,12 +3,10 @@ import fetchStores from '../../services/Stores.service'
 import './Stores.css'
 import Categories from '../Categories/CategoriesList'
 import fetchCategories from '../../services/Categories.service'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faStar } from '@fortawesome/free-regular-svg-icons'
+import { Route } from 'react-router-dom'
 
 
 const postalcode = 28010 
-// const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
 
 class Store extends React.Component {
     constructor(props){
@@ -48,7 +46,6 @@ class Store extends React.Component {
     render() {
         if (this.state.companyData === ''){
             return <div><h1>Cargando..</h1></div>
-
         } else return (
             <>
                 <div className="background" style={{ background: `rgb(${this.state.companyData.color})` }}>
@@ -65,21 +62,12 @@ class Store extends React.Component {
                         <h3>Cambiar</h3>
                     </div>
                 </div>
-            <div>
-            {/* POPULARES */}
-            {/* <div className="category-info">
-                <div className="star-icon">
-                    {star}
-                </div>
                 <div>
-                    <h2 className="category-name">Populares</h2>
-                </div>
-            </div> */}
-            {
-                    (this.state.categories.length > 0) ? <Categories categories={this.state.categories}/> : ''
+                {
+                    (this.state.categories.length > 0) ? <Categories store={this.state.companyData.name} categories={this.state.categories}/> : ''
 
-            }
-            </div>
+                }
+                </div>
             </>
         )
     }

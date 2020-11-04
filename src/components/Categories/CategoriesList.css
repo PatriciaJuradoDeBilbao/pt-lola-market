@@ -4,6 +4,59 @@
 
 .list-background {
     background-color: #FFFFFF;
+    /* top: 64px;
+    overflow: auto;
+    position: relative; */
+}
+
+.popular-container {
+    display: flex;
+    flex-direction: row;
+    width: 324px;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid #D5D5D5;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
+.popular-container:hover {
+    background-color: #f5f5f5;
+    color: #666666;
+  }
+
+  .popular-container:active {
+    background-color: rgba(79, 208, 83, 0.1);
+    color: #666666;
+  }
+
+  .btn {
+
+    text-decoration: none;
+  }
+  .popular-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .star-icon {
+    padding-left: 10px;
+    font-weight: 700;
+  }
+
+  .category-popular {
+    font-size: 18px;
+    color: #666666;
+    padding-left: 10px;
+    font-weight: 400;
+  }
+
+  .select-icon-container {
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .select-icon {
+
+  }
