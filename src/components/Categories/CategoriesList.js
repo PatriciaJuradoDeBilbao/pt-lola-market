@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Category from './Category/Category'
 import './CategoriesList.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,24 +10,25 @@ import { Link } from 'react-router-dom'
 const Categories = props => {
 
 const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
+const [show, setShow] = useState(true)
 
     if(props !== undefined) {
 
         return (
             <>
                 <div className="list-background">
-                <Link to={`/tienda/${props.store}/populares`} className="btn">
+                <Link to={`/tienda/${props.store}/populares`} className="btn" onClick={() => setShow(!show)} >
                     <div className="popular-container">
-                        <div className="popular-info">
+                        <div className="popular-info" >
                             <div className="star-icon">
                                 {star}
                             </div>
                             <div>
-                                <h2 className="category-popular">Populares</h2>
+                                <h2 className="category-popular">Populares{show}</h2>
                             </div>
                         </div>
                         <div className="select-icon-container">
-                            <Select className="select-icon" />
+                            {show ? '' : (<Select className="select-icon" />)}
                         </div>
                     </div>
                 </Link>

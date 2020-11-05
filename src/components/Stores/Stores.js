@@ -64,7 +64,6 @@ class Store extends React.Component {
                 <div>
                 {
                     (this.state.categories.length > 0) ? <Categories store={this.state.companyData.name} categories={this.state.categories}/> : ''
-
                 }
                 </div>
             </>

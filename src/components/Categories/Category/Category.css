@@ -60,6 +60,7 @@
   height: 56px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .all-section {
@@ -73,4 +74,15 @@
 
 .all-section-link {
   text-decoration: none;
+
+}
+
+.select-icon-container  {
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+  .select-icon:checked {
+    overflow: hidden;
 }

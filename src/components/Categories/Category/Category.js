@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Category.css'
 import SubCategory from '../SubCategories/SubCategory'
 import { ReactComponent as Hide } from '../../../assets/ic_hide.svg'
+import { ReactComponent as Select } from '../../../assets/ic_checked.svg'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
@@ -10,8 +11,9 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 const Category = props => {
 
     const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="sm"/>
-
+    
     const [show, setShow] = useState(false)
+    const [showCheck, setShowCheck] = useState(true)
 
     return  (
         <>
@@ -34,10 +36,13 @@ const Category = props => {
                 {show 
                 ? 
                 ( <div>
-                    <div className="categories">
-                        <Link to={`/tienda/${props.store}/${props.name}`} className="all-section-link">
-                            <h3 className="all-section">Ver toda la sección</h3>
+                    <div className="categories" onClick={() => setShowCheck(!showCheck)}>
+                        <Link to={`/tienda/${props.store}/${props.name}`} className="all-section-link"  >
+                            <h3 className="all-section">Ver toda la sección{showCheck}</h3>
                         </Link>
+                        <div className="select-icon-container">
+                            {showCheck ? '' : (<Select className="select-icon" />)}
+                        </div>
                     </div>    
                     <div className="subcategories-container">
                         {props.categories.map(subcategories => 

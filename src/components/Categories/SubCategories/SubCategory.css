@@ -32,6 +32,6 @@
     align-items: center;
 }
 
-.select-icon-hidden {
+.select-icon:checked {
     overflow: hidden;
 }

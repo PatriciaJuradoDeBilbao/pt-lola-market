@@ -18,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     height: 56px;
+
 }
 
 .popular-container:hover {
@@ -31,6 +32,9 @@
   }
 
   .btn {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     text-decoration: none;
   }
   
