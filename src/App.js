@@ -17,7 +17,7 @@ class App extends React.Component {
     fetchData()
     .then(token => {
       localStorage.setItem('token', JSON.stringify(token.token))
-      console.log(token)
+      // console.log(token)
       this.setState({
         validToken: token.token,
       })
@@ -26,7 +26,7 @@ class App extends React.Component {
 
     render () {
       if(this.state.validToken === ''){
-        return <h1>Cargando...</h1>
+        return <h2>Cargando...</h2>
       } else 
       return (
       <>
@@ -44,9 +44,9 @@ export default App;
   
 // const App = props => {
 
-//   const [data, setData] = React.useState([{validToken: ''}])
+//   const [data, setData] = useState([{validToken: ''}])
 
-//   React.useEffect(() => {
+//   useEffect(() => {
 //     fetchData()
 //     .then(token => {
 //       localStorage.setItem('token', JSON.stringify(token.token))

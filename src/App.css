@@ -5,3 +5,10 @@
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
 }
+
+
+.item-container {
+  height: 100%;
+  width: 100%;
+  background-color: burlywood;
+}

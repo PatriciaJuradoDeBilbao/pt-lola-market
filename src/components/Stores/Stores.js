@@ -19,10 +19,10 @@ class Store extends React.Component {
 
     componentDidMount() {
       const token = JSON.parse(localStorage.getItem('token'))
-        console.log(token)
+        // console.log(token)
         fetchStores(token, postalcode)
         .then(response => { 
-            console.log(response);
+            // console.log(response);
             const companyData = response.find(market => market.name === 'Mercadona')
             this.setState({
                 companyData: companyData
@@ -35,7 +35,7 @@ class Store extends React.Component {
         const companyId = this.state.companyData.equivalent_company_id 
         fetchCategories(token, companyId)
         .then(response =>  {
-            console.log(response.categories)
+            // console.log(response.categories)
             this.setState({
             categories: response.categories
             })

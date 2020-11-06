@@ -10,25 +10,29 @@ import { Link } from 'react-router-dom'
 const Categories = props => {
 
 const star = <FontAwesomeIcon icon={faStar} color="#4FD053" size="lg"/>
-const [show, setShow] = useState(true)
+const [select, setSelect] = useState('')
+
+const handleSelect = newSelect => {
+    setSelect(newSelect)
+}
 
     if(props !== undefined) {
 
         return (
             <>
                 <div className="list-background">
-                <Link to={`/tienda/${props.store}/populares`} className="btn" onClick={() => setShow(!show)} >
+                <Link to={`/tienda/${props.store}/populares`} className="btn" onClick={() => setSelect('')} >
                     <div className="popular-container">
                         <div className="popular-info" >
                             <div className="star-icon">
                                 {star}
                             </div>
                             <div>
-                                <h2 className="category-popular">Populares{show}</h2>
+                                <h2 className="category-popular">Populares</h2>
                             </div>
                         </div>
                         <div className="select-icon-container">
-                            {show ? '' : (<Select className="select-icon" />)}
+                            {select === '' ? (<Select className="select-icon" />) : ''}
                         </div>
                     </div>
                 </Link>
@@ -38,7 +42,10 @@ const [show, setShow] = useState(true)
                                 key={category.id}
                                 name={category.name}
                                 categories={category.categories}
-                                store={props.store} />
+                                store={props.store} 
+                                show={select === category.name}
+                                onClick={handleSelect}
+                                />
                         )}
                     </h2>
                 </div>
