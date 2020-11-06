@@ -3,6 +3,7 @@ import fetchStores from '../../services/Stores.service'
 import './Stores.css'
 import Categories from '../Categories/CategoriesList'
 import fetchCategories from '../../services/Categories.service'
+import Spinner from '../Spinner/Spinner'
 
 
 const postalcode = 28010 
@@ -44,7 +45,7 @@ class Store extends React.Component {
 
     render() {
         if (this.state.companyData === ''){
-            return <div><h1>Cargando..</h1></div>
+            return <Spinner />
         } else return (
             <>
                 <div className="background" style={{ background: `rgb(${this.state.companyData.color})` }}>

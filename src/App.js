@@ -3,7 +3,7 @@ import './App.css'
 import fetchData from './services/Token.service'
 import { Route } from 'react-router-dom'
 import Store from './components/Stores/Stores'
-
+import Spinner from './components/Spinner/Spinner'
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends React.Component {
 
     render () {
       if(this.state.validToken === ''){
-        return <h2>Cargando...</h2>
+        return <Spinner />
       } else 
       return (
       <>
